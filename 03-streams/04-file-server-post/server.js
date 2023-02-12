@@ -19,7 +19,7 @@ server.on('request', (req, res) => {
         res.end('incorrect filename');
       }
 
-      const limitedStream = new LimitSizeStream({limit: 10000, encoding: 'utf-8'});
+      const limitedStream = new LimitSizeStream({limit: 1048576, encoding: 'utf-8'});
       const outStream = fs.createWriteStream(filepath, {flags: 'wx'});
 
       req.pipe(limitedStream).pipe(outStream);
