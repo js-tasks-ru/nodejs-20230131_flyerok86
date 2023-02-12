@@ -15,7 +15,7 @@ server.on('request', (req, res) => {
     case 'GET':
       if (!url.pathname.split('/').pop().includes('.')) {
         res.statusCode = 400;
-        res.end('incorrect filename');
+        res.end('Incorrect filename');
       }
 
       const stream = fs.createReadStream(filepath);
@@ -25,10 +25,10 @@ server.on('request', (req, res) => {
       stream.on('error', (error) => {
         if (error.code = 'ENOENT') {
           res.statusCode = 404;
-          res.end('file not found');
+          res.end('File not found');
         } else {
           res.statusCode = 505;
-          res.end('something went wrong');
+          res.end('Something went wrong');
         }
       });
       break;

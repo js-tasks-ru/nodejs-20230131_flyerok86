@@ -15,7 +15,7 @@ server.on('request', (req, res) => {
     case 'DELETE':
       if (!pathname || pathname.includes('/')) {
         res.statusCode = 400;
-        res.end('incorrect filename');
+        res.end('Incorrect filename');
         break;
       }
 
@@ -31,7 +31,7 @@ server.on('request', (req, res) => {
           res.end('Something went wrong');
         }
         res.statusCode = 200;
-        res.end('success');
+        res.end('Success');
       });
 
       break;
